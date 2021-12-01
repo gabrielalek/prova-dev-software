@@ -1,0 +1,10 @@
+### Cadastrar vendas
+POST https://localhost:5001/api/venda/create
+Content-Type: application/json
+
+{
+    "Cliente" : "Usuário"
+}
+
+### Listar vendas
+GET https://localhost:5001/api/venda/list
