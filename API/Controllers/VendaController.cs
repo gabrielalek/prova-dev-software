@@ -21,6 +21,16 @@ namespace API.Controllers
         [Route("create")]
         public IActionResult Create([FromBody] Venda venda)
         {
+            if (String.IsNullOrEmpty(venda.CarrinhoId))
+            {
+                venda.CarrinhoId = Guid.NewGuid().ToString();
+            }
+
+            venda.ItemVenda = _context.ItensVenda.Find(venda.ItemVenda);
+
+            venda.FormaPagamento = _context.FormasPagamento.Find(venda.PagamentoId);
+            _context.Vendas.Add(venda);
+            _context.SaveChanges();
             return Created("", venda);
         }
 

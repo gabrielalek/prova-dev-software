@@ -1,0 +1,10 @@
+### Cadastrar uma nova forma de pagamento
+POST https://localhost:5001/api/pagamento/create
+Content-Type: application/json
+
+{
+    "FormaPagamento" : "Pix"
+}
+
+### Listar todas as formas de pagamento
+GET https://localhost:5001/api/pagamento/list
